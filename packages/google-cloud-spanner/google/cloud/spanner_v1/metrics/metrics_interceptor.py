@@ -15,7 +15,7 @@
 """Interceptor for collecting Cloud Spanner metrics."""
 
 import re
-from typing import Dict
+from typing import Any, Dict
 
 from grpc_interceptor import ClientInterceptor
 
@@ -122,10 +122,115 @@ class MetricsInterceptor(ClientInterceptor):
         tracer.set_method(method_name)
         tracer.record_attempt_start()
         response = invoked_method(request_or_iterator, call_details)
-        tracer.record_attempt_completion()
 
-        # Process and send GFE metrics if enabled
-        if tracer.gfe_enabled:
-            metadata = response.initial_metadata()
-            tracer.record_gfe_metrics(metadata)
+        return _wrap_response(response, tracer)
+
+
+def _wrap_response(response: Any, tracer: Any) -> Any:
+    """Wraps the response if it is streaming, or records metrics immediately if unary."""
+    if hasattr(response, "__anext__") or hasattr(response, "__aiter__"):
+        return _AsyncStreamingResponseWrapper(response, tracer)
+    elif hasattr(response, "__next__") or hasattr(response, "__iter__"):
+        return _StreamingResponseWrapper(response, tracer)
+    else:
+        # Unary call: execute completion and record metrics immediately
+        tracer.record_attempt_completion()
+        metadata = []
+        if hasattr(response, "initial_metadata"):
+            try:
+                metadata.extend(response.initial_metadata() or [])
+            except Exception:
+                pass
+        if hasattr(response, "trailing_metadata"):
+            try:
+                metadata.extend(response.trailing_metadata() or [])
+            except Exception:
+                pass
+        tracer.record_gfe_metrics(metadata)
         return response
+
+
+class _StreamingResponseWrapper:
+    """Wrapper for streaming RPC response iterators to defer metrics recording."""
+
+    def __init__(self, response, tracer):
+        self._response = response
+        self._tracer = tracer
+        self._metrics_recorded = False
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        try:
+            return next(self._response)
+        except StopIteration:
+            self._record_metrics()
+            raise
+        except Exception:
+            self._record_metrics()
+            raise
+
+    def _record_metrics(self):
+        if self._metrics_recorded:
+            return
+        self._metrics_recorded = True
+        self._tracer.record_attempt_completion()
+        metadata = []
+        if hasattr(self._response, "initial_metadata"):
+            try:
+                metadata.extend(self._response.initial_metadata() or [])
+            except Exception:
+                pass
+        if hasattr(self._response, "trailing_metadata"):
+            try:
+                metadata.extend(self._response.trailing_metadata() or [])
+            except Exception:
+                pass
+        self._tracer.record_gfe_metrics(metadata)
+
+    def __getattr__(self, name):
+        return getattr(self._response, name)
+
+
+class _AsyncStreamingResponseWrapper:
+    """Wrapper for async streaming RPC response iterators to defer metrics recording."""
+
+    def __init__(self, response, tracer):
+        self._response = response
+        self._tracer = tracer
+        self._metrics_recorded = False
+
+    def __aiter__(self):
+        return self
+
+    async def __anext__(self):
+        try:
+            return await self._response.__anext__()
+        except StopAsyncIteration:
+            self._record_metrics()
+            raise
+        except Exception:
+            self._record_metrics()
+            raise
+
+    def _record_metrics(self):
+        if self._metrics_recorded:
+            return
+        self._metrics_recorded = True
+        self._tracer.record_attempt_completion()
+        metadata = []
+        if hasattr(self._response, "initial_metadata"):
+            try:
+                metadata.extend(self._response.initial_metadata() or [])
+            except Exception:
+                pass
+        if hasattr(self._response, "trailing_metadata"):
+            try:
+                metadata.extend(self._response.trailing_metadata() or [])
+            except Exception:
+                pass
+        self._tracer.record_gfe_metrics(metadata)
+
+    def __getattr__(self, name):
+        return getattr(self._response, name)
