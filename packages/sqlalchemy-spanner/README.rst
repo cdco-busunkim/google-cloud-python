@@ -61,7 +61,7 @@ During setup the dialect will be registered with entry points.
 Samples
 -------------
 
-The `samples directory <https://github.com/googleapis/google-cloud-python/blob/-/samples/README.md>`__
+The `samples directory <https://github.com/googleapis/google-cloud-python/tree/main/packages/sqlalchemy-spanner/samples>`__
 contains multiple examples for how to configure and use common Spanner features.
 
 
