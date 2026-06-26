@@ -4,6 +4,13 @@
 
 [1]: https://pypi.org/project/bigframes/#history
 
+## [2.45.0](https://github.com/googleapis/google-cloud-python/compare/bigframes-v2.44.0...bigframes-v2.45.0) (2026-06-26)
+
+
+### Features
+
+* **bigframes:** add ai.classify, ai.score, ai.if_ to the df bq accessor ([#17569](https://github.com/googleapis/google-cloud-python/issues/17569)) ([4f94be8](https://github.com/googleapis/google-cloud-python/commit/4f94be8f01971380f0fb5b433ab33d7b4cb7176d))
+
 ## [2.44.0](https://github.com/googleapis/google-cloud-python/compare/bigframes-v2.43.0...bigframes-v2.44.0) (2026-06-25)
 
 
