@@ -2564,7 +2564,7 @@ libraries:
       metadata_name_override: grpc-iam
       default_version: apiVersion
   - name: pandas-gbq
-    version: 0.35.0
+    version: 0.35.1
     skip_release: true
     python:
       library_type: INTEGRATION
