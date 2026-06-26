@@ -1975,6 +1975,9 @@ def test_list_accounts_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.Account) for i in results)
@@ -2063,6 +2066,8 @@ async def test_list_accounts_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -3206,6 +3211,9 @@ def test_list_account_summaries_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.AccountSummary) for i in results)
@@ -3298,6 +3306,8 @@ async def test_list_account_summaries_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -3934,6 +3944,9 @@ def test_list_properties_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.Property) for i in results)
@@ -4022,6 +4035,8 @@ async def test_list_properties_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -6159,6 +6174,9 @@ def test_list_firebase_links_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.FirebaseLink) for i in results)
@@ -6251,6 +6269,8 @@ async def test_list_firebase_links_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -8113,6 +8133,9 @@ def test_list_google_ads_links_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.GoogleAdsLink) for i in results)
@@ -8205,6 +8228,8 @@ async def test_list_google_ads_links_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -9378,6 +9403,9 @@ def test_list_measurement_protocol_secrets_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.MeasurementProtocolSecret) for i in results)
@@ -9470,6 +9498,8 @@ async def test_list_measurement_protocol_secrets_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -12687,6 +12717,9 @@ def test_list_sk_ad_network_conversion_value_schemas_pager(
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(
@@ -12785,6 +12818,8 @@ async def test_list_sk_ad_network_conversion_value_schemas_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -13160,6 +13195,9 @@ def test_search_change_history_events_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.ChangeHistoryEvent) for i in results)
@@ -13252,6 +13290,8 @@ async def test_search_change_history_events_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -15880,6 +15920,9 @@ def test_list_conversion_events_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.ConversionEvent) for i in results)
@@ -15972,6 +16015,8 @@ async def test_list_conversion_events_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -17744,6 +17789,9 @@ def test_list_key_events_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.KeyEvent) for i in results)
@@ -17832,6 +17880,8 @@ async def test_list_key_events_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -18638,6 +18688,9 @@ def test_list_display_video360_advertiser_links_pager(transport_name: str = "grp
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(
@@ -18732,6 +18785,8 @@ async def test_list_display_video360_advertiser_links_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -20643,6 +20698,9 @@ def test_list_display_video360_advertiser_link_proposals_pager(
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(
@@ -20743,6 +20801,8 @@ async def test_list_display_video360_advertiser_link_proposals_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -23235,6 +23295,9 @@ def test_list_custom_dimensions_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.CustomDimension) for i in results)
@@ -23327,6 +23390,8 @@ async def test_list_custom_dimensions_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -25242,6 +25307,9 @@ def test_list_custom_metrics_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.CustomMetric) for i in results)
@@ -25334,6 +25402,8 @@ async def test_list_custom_metrics_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -28325,6 +28395,9 @@ def test_list_data_streams_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.DataStream) for i in results)
@@ -28417,6 +28490,8 @@ async def test_list_data_streams_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -29525,6 +29600,9 @@ def test_list_audiences_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, audience.Audience) for i in results)
@@ -29613,6 +29691,8 @@ async def test_list_audiences_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -31369,6 +31449,9 @@ def test_list_search_ads360_links_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.SearchAds360Link) for i in results)
@@ -31461,6 +31544,8 @@ async def test_list_search_ads360_links_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -35386,6 +35471,9 @@ def test_list_access_bindings_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.AccessBinding) for i in results)
@@ -35478,6 +35566,8 @@ async def test_list_access_bindings_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -37300,6 +37390,9 @@ def test_list_expanded_data_sets_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, expanded_data_set.ExpandedDataSet) for i in results)
@@ -37392,6 +37485,8 @@ async def test_list_expanded_data_sets_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -39269,6 +39364,9 @@ def test_list_channel_groups_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, channel_group.ChannelGroup) for i in results)
@@ -39361,6 +39459,8 @@ async def test_list_channel_groups_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -41642,6 +41742,9 @@ def test_list_big_query_links_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.BigQueryLink) for i in results)
@@ -41734,6 +41837,8 @@ async def test_list_big_query_links_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -44718,6 +44823,9 @@ def test_list_ad_sense_links_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.AdSenseLink) for i in results)
@@ -44810,6 +44918,8 @@ async def test_list_ad_sense_links_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -45616,6 +45726,9 @@ def test_list_event_create_rules_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(
@@ -45710,6 +45823,8 @@ async def test_list_event_create_rules_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -47570,6 +47685,9 @@ def test_list_event_edit_rules_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, event_create_and_edit.EventEditRule) for i in results)
@@ -47662,6 +47780,8 @@ async def test_list_event_edit_rules_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -50925,6 +51045,9 @@ def test_list_calculated_metrics_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.CalculatedMetric) for i in results)
@@ -51017,6 +51140,8 @@ async def test_list_calculated_metrics_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -52725,6 +52850,9 @@ def test_list_rollup_property_source_links_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.RollupPropertySourceLink) for i in results)
@@ -52817,6 +52945,8 @@ async def test_list_rollup_property_source_links_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -54878,6 +55008,9 @@ def test_list_subproperty_event_filters_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(
@@ -54973,6 +55106,8 @@ async def test_list_subproperty_event_filters_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -56879,6 +57014,9 @@ def test_list_reporting_data_annotations_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.ReportingDataAnnotation) for i in results)
@@ -56971,6 +57109,8 @@ async def test_list_reporting_data_annotations_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -58486,6 +58626,9 @@ def test_list_subproperty_sync_configs_pager(transport_name: str = "grpc"):
         assert pager._retry == retry
         assert pager._timeout == timeout
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.SubpropertySyncConfig) for i in results)
@@ -58578,6 +58721,8 @@ async def test_list_subproperty_sync_configs_async_pager():
             request={},
         )
         assert async_pager.next_page_token == "abc"
+        assert str(async_pager).startswith(f"{async_pager.__class__.__name__}<")
+
         responses = []
         async for response in async_pager:  # pragma: no branch
             responses.append(response)
@@ -60702,6 +60847,9 @@ def test_list_accounts_rest_pager(transport: str = "rest"):
 
         pager = client.list_accounts(request=sample_request)
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.Account) for i in results)
@@ -61202,6 +61350,9 @@ def test_list_account_summaries_rest_pager(transport: str = "rest"):
 
         pager = client.list_account_summaries(request=sample_request)
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.AccountSummary) for i in results)
@@ -61588,6 +61739,9 @@ def test_list_properties_rest_pager(transport: str = "rest"):
         sample_request = {}
 
         pager = client.list_properties(request=sample_request)
+
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
 
         results = list(pager)
         assert len(results) == 6
@@ -62748,6 +62902,9 @@ def test_list_firebase_links_rest_pager(transport: str = "rest"):
 
         pager = client.list_firebase_links(request=sample_request)
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.FirebaseLink) for i in results)
@@ -63747,6 +63904,9 @@ def test_list_google_ads_links_rest_pager(transport: str = "rest"):
 
         pager = client.list_google_ads_links(request=sample_request)
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.GoogleAdsLink) for i in results)
@@ -64385,6 +64545,9 @@ def test_list_measurement_protocol_secrets_rest_pager(transport: str = "rest"):
         sample_request = {"parent": "properties/sample1/dataStreams/sample2"}
 
         pager = client.list_measurement_protocol_secrets(request=sample_request)
+
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
 
         results = list(pager)
         assert len(results) == 6
@@ -66195,6 +66358,9 @@ def test_list_sk_ad_network_conversion_value_schemas_rest_pager(
             request=sample_request
         )
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(
@@ -66392,6 +66558,9 @@ def test_search_change_history_events_rest_pager(transport: str = "rest"):
         sample_request = {"account": "accounts/sample1"}
 
         pager = client.search_change_history_events(request=sample_request)
+
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
 
         results = list(pager)
         assert len(results) == 6
@@ -67781,6 +67950,9 @@ def test_list_conversion_events_rest_pager(transport: str = "rest"):
 
         pager = client.list_conversion_events(request=sample_request)
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.ConversionEvent) for i in results)
@@ -68765,6 +68937,9 @@ def test_list_key_events_rest_pager(transport: str = "rest"):
 
         pager = client.list_key_events(request=sample_request)
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.KeyEvent) for i in results)
@@ -69229,6 +69404,9 @@ def test_list_display_video360_advertiser_links_rest_pager(transport: str = "res
         sample_request = {"parent": "properties/sample1"}
 
         pager = client.list_display_video360_advertiser_links(request=sample_request)
+
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
 
         results = list(pager)
         assert len(results) == 6
@@ -70307,6 +70485,9 @@ def test_list_display_video360_advertiser_link_proposals_rest_pager(
         pager = client.list_display_video360_advertiser_link_proposals(
             request=sample_request
         )
+
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
 
         results = list(pager)
         assert len(results) == 6
@@ -71623,6 +71804,9 @@ def test_list_custom_dimensions_rest_pager(transport: str = "rest"):
 
         pager = client.list_custom_dimensions(request=sample_request)
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.CustomDimension) for i in results)
@@ -72618,6 +72802,9 @@ def test_list_custom_metrics_rest_pager(transport: str = "rest"):
         sample_request = {"parent": "properties/sample1"}
 
         pager = client.list_custom_metrics(request=sample_request)
+
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
 
         results = list(pager)
         assert len(results) == 6
@@ -74182,6 +74369,9 @@ def test_list_data_streams_rest_pager(transport: str = "rest"):
 
         pager = client.list_data_streams(request=sample_request)
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.DataStream) for i in results)
@@ -74790,6 +74980,9 @@ def test_list_audiences_rest_pager(transport: str = "rest"):
         sample_request = {"parent": "properties/sample1"}
 
         pager = client.list_audiences(request=sample_request)
+
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
 
         results = list(pager)
         assert len(results) == 6
@@ -75730,6 +75923,9 @@ def test_list_search_ads360_links_rest_pager(transport: str = "rest"):
         sample_request = {"parent": "properties/sample1"}
 
         pager = client.list_search_ads360_links(request=sample_request)
+
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
 
         results = list(pager)
         assert len(results) == 6
@@ -77695,6 +77891,9 @@ def test_list_access_bindings_rest_pager(transport: str = "rest"):
 
         pager = client.list_access_bindings(request=sample_request)
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.AccessBinding) for i in results)
@@ -78691,6 +78890,9 @@ def test_list_expanded_data_sets_rest_pager(transport: str = "rest"):
         sample_request = {"parent": "properties/sample1"}
 
         pager = client.list_expanded_data_sets(request=sample_request)
+
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
 
         results = list(pager)
         assert len(results) == 6
@@ -79694,6 +79896,9 @@ def test_list_channel_groups_rest_pager(transport: str = "rest"):
         sample_request = {"parent": "properties/sample1"}
 
         pager = client.list_channel_groups(request=sample_request)
+
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
 
         results = list(pager)
         assert len(results) == 6
@@ -80887,6 +81092,9 @@ def test_list_big_query_links_rest_pager(transport: str = "rest"):
         sample_request = {"parent": "properties/sample1"}
 
         pager = client.list_big_query_links(request=sample_request)
+
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
 
         results = list(pager)
         assert len(results) == 6
@@ -82456,6 +82664,9 @@ def test_list_ad_sense_links_rest_pager(transport: str = "rest"):
 
         pager = client.list_ad_sense_links(request=sample_request)
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.AdSenseLink) for i in results)
@@ -82901,6 +83112,9 @@ def test_list_event_create_rules_rest_pager(transport: str = "rest"):
         sample_request = {"parent": "properties/sample1/dataStreams/sample2"}
 
         pager = client.list_event_create_rules(request=sample_request)
+
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
 
         results = list(pager)
         assert len(results) == 6
@@ -83917,6 +84131,9 @@ def test_list_event_edit_rules_rest_pager(transport: str = "rest"):
         sample_request = {"parent": "properties/sample1/dataStreams/sample2"}
 
         pager = client.list_event_edit_rules(request=sample_request)
+
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
 
         results = list(pager)
         assert len(results) == 6
@@ -85664,6 +85881,9 @@ def test_list_calculated_metrics_rest_pager(transport: str = "rest"):
 
         pager = client.list_calculated_metrics(request=sample_request)
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.CalculatedMetric) for i in results)
@@ -86614,6 +86834,9 @@ def test_list_rollup_property_source_links_rest_pager(transport: str = "rest"):
         sample_request = {"parent": "properties/sample1"}
 
         pager = client.list_rollup_property_source_links(request=sample_request)
+
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
 
         results = list(pager)
         assert len(results) == 6
@@ -87781,6 +88004,9 @@ def test_list_subproperty_event_filters_rest_pager(transport: str = "rest"):
 
         pager = client.list_subproperty_event_filters(request=sample_request)
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(
@@ -88826,6 +89052,9 @@ def test_list_reporting_data_annotations_rest_pager(transport: str = "rest"):
 
         pager = client.list_reporting_data_annotations(request=sample_request)
 
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
+
         results = list(pager)
         assert len(results) == 6
         assert all(isinstance(i, resources.ReportingDataAnnotation) for i in results)
@@ -89653,6 +89882,9 @@ def test_list_subproperty_sync_configs_rest_pager(transport: str = "rest"):
         sample_request = {"parent": "properties/sample1"}
 
         pager = client.list_subproperty_sync_configs(request=sample_request)
+
+        assert pager.next_page_token == "abc"
+        assert str(pager).startswith(f"{pager.__class__.__name__}<")
 
         results = list(pager)
         assert len(results) == 6
